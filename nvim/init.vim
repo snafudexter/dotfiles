@@ -21,12 +21,19 @@ Plug 'airblade/vim-rooter'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
+
+" Tree sitter
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'p00f/nvim-ts-rainbow'
+
+
 call plug#end()
 
 autocmd vimenter * ++nested colorscheme gruvbox
 
 lua require('lsp-saga')
 lua require('lsp')
+lua require('tree-sitter')
 
 let g:prettier#autoformat = 1
 let g:prettier#autoformat_require_pragma = 0
