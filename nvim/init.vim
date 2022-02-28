@@ -14,7 +14,6 @@ Plug 'prettier/vim-prettier', { 'do': 'npm install --frozen-lockfile --productio
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'tami5/lspsaga.nvim'
-Plug 'morhetz/gruvbox'
 
 " fuzzy finder
 Plug 'airblade/vim-rooter'
@@ -26,10 +25,18 @@ Plug 'junegunn/fzf.vim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'p00f/nvim-ts-rainbow'
 
+" Spaceduck colorscheme
+Plug 'pineapplegiant/spaceduck', { 'branch': 'main' }
 
 call plug#end()
 
-autocmd vimenter * ++nested colorscheme gruvbox
+if exists('+termguicolors')
+    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+    set termguicolors
+endif
+
+colorscheme spaceduck
 
 lua require('lsp-saga')
 lua require('lsp')
@@ -39,7 +46,7 @@ let g:prettier#autoformat = 1
 let g:prettier#autoformat_require_pragma = 0
 
 let g:lightline = {
-      \ 'colorscheme': 'seoul256',
+      \ 'colorscheme': 'spaceduck',
       \ }
 
 set nocompatible
