@@ -41,6 +41,7 @@ colorscheme spaceduck
 lua require('lsp-saga')
 lua require('lsp')
 lua require('tree-sitter')
+lua require('keymaps')
 
 let g:prettier#autoformat = 1
 let g:prettier#autoformat_require_pragma = 0
@@ -61,3 +62,5 @@ set tabstop=4
 set hlsearch 
 set incsearch
 set expandtab
+set tabstop=2
+set shiftwidth=2
