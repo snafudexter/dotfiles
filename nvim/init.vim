@@ -1,19 +1,27 @@
 call plug#begin()
 
+Plug 'nvim-lua/plenary.nvim'
+
 " GUI enhancements
 Plug 'itchyny/lightline.vim'
 Plug 'neovim/nvim-lspconfig'
+Plug 'williamboman/nvim-lsp-installer'
+Plug 'tamago324/nlsp-settings.nvim'
+Plug 'jose-elias-alvarez/null-ls.nvim'
+Plug 'ray-x/lsp_signature.nvim'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/cmp-nvim-lua'
+Plug 'hrsh7th/cmp-emoji'
 Plug 'hrsh7th/nvim-cmp'
+Plug 'L3MON4D3/LuaSnip'
+Plug 'saadparwaiz1/cmp_luasnip'
+
 Plug 'prettier/vim-prettier', { 'do': 'npm install --frozen-lockfile --production' }
-" For vsnip users.
-Plug 'hrsh7th/cmp-vsnip'
-Plug 'hrsh7th/vim-vsnip'
-Plug 'tami5/lspsaga.nvim'
+
+
 
 " fuzzy finder
 Plug 'airblade/vim-rooter'
@@ -38,9 +46,10 @@ endif
 
 colorscheme spaceduck
 
-lua require('lsp-saga')
 lua require('lsp')
+lua require('cmp-configs')
 lua require('tree-sitter')
+lua require('options')
 lua require('keymaps')
 
 let g:prettier#autoformat = 1
@@ -50,17 +59,4 @@ let g:lightline = {
       \ 'colorscheme': 'spaceduck',
       \ }
 
-set nocompatible
-set number
-syntax on
-set encoding=utf-8
-set title
-set autoindent
-filetype plugin indent on
-set shiftwidth=4
-set tabstop=4
-set hlsearch 
-set incsearch
-set expandtab
-set tabstop=2
-set shiftwidth=2
+
