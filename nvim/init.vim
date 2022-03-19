@@ -1,5 +1,6 @@
 call plug#begin()
 
+Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 
 " GUI enhancements
@@ -29,6 +30,13 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 
+" Telescope
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-media-files.nvim'
+Plug 'nvim-telescope/telescope-ui-select.nvim'
+Plug 'nvim-telescope/telescope-file-browser.nvim'
+
+
 " Tree sitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'p00f/nvim-ts-rainbow'
@@ -41,7 +49,6 @@ call plug#end()
 if exists('+termguicolors')
     let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
     let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-    set termguicolors
 endif
 
 colorscheme spaceduck
@@ -51,6 +58,8 @@ lua require('cmp-configs')
 lua require('tree-sitter')
 lua require('options')
 lua require('keymaps')
+lua require('telescope-configs')
+
 
 let g:prettier#autoformat = 1
 let g:prettier#autoformat_require_pragma = 0

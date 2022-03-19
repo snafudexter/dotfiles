@@ -59,3 +59,25 @@ keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
+
+
+keymap("n", "<F4>", "<cmd>Telescope resume<cr>", opts)
+keymap("n", "<F5>", "<cmd>Telescope commands<CR>", opts)
+
+
+keymap("n", "<F11>", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+keymap("n", "<F12>", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+
+keymap(
+  "n",
+  "<C-p>",
+  "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+  opts
+)
+
+keymap("n", "<C-t>", "<cmd>lua vim.lsp.buf.document_symbol()<cr>", opts)
+
+keymap("n", "<C-s>", "<cmd>vsplit<cr>", opts)
+keymap("n", "<C-z>", "<cmd>ZenMode<cr>", opts)
+
+
