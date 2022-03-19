@@ -1,10 +1,19 @@
 call plug#begin()
 
+Plug 'windwp/nvim-ts-autotag'
+Plug 'windwp/nvim-autopairs'
+Plug 'numToStr/Comment.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'kyazdani42/nvim-tree.lua'
+Plug 'akinsho/bufferline.nvim'
+Plug 'nvim-lualine/lualine.nvim'
+Plug 'SmiteshP/nvim-gps'
+Plug 'folke/zen-mode.nvim'
+
+
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 
-" GUI enhancements
-Plug 'itchyny/lightline.vim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/nvim-lsp-installer'
 Plug 'tamago324/nlsp-settings.nvim'
@@ -40,6 +49,7 @@ Plug 'nvim-telescope/telescope-file-browser.nvim'
 " Tree sitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'p00f/nvim-ts-rainbow'
+Plug 'JoosepAlviste/nvim-ts-context-commentstring'
 
 " Spaceduck colorscheme
 Plug 'pineapplegiant/spaceduck', { 'branch': 'main' }
@@ -59,7 +69,13 @@ lua require('tree-sitter')
 lua require('options')
 lua require('keymaps')
 lua require('telescope-configs')
-
+lua require('autopairs-configs')
+lua require('comment-configs')
+lua require('nvim-tree-configs')
+lua require('bufferline-configs')
+lua require('lualine-configs')
+lua require('nvim-gps-configs')
+lua require('zenmode-configs')
 
 let g:prettier#autoformat = 1
 let g:prettier#autoformat_require_pragma = 0
