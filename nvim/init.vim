@@ -9,7 +9,7 @@ Plug 'akinsho/bufferline.nvim'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'SmiteshP/nvim-gps'
 Plug 'folke/zen-mode.nvim'
-
+Plug 'RRethy/vim-illuminate'
 
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
@@ -51,8 +51,12 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'p00f/nvim-ts-rainbow'
 Plug 'JoosepAlviste/nvim-ts-context-commentstring'
 
-" Spaceduck colorscheme
+Plug 'nacro90/numb.nvim'
+
+" colorschemes
 Plug 'pineapplegiant/spaceduck', { 'branch': 'main' }
+Plug 'morhetz/gruvbox'
+
 
 call plug#end()
 
@@ -61,7 +65,8 @@ if exists('+termguicolors')
     let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 endif
 
-colorscheme spaceduck
+" colorscheme spaceduck
+autocmd vimenter * ++nested colorscheme gruvbox
 
 lua require('lsp')
 lua require('cmp-configs')
@@ -76,6 +81,8 @@ lua require('bufferline-configs')
 lua require('lualine-configs')
 lua require('nvim-gps-configs')
 lua require('zenmode-configs')
+lua require('illuminate-configs')
+lua require('numb-configs')
 
 let g:prettier#autoformat = 1
 let g:prettier#autoformat_require_pragma = 0
@@ -84,4 +91,4 @@ let g:lightline = {
       \ 'colorscheme': 'spaceduck',
       \ }
 
-
+set bg=dark
