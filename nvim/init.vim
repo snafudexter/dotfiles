@@ -28,6 +28,7 @@ Plug 'hrsh7th/cmp-emoji'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'L3MON4D3/LuaSnip'
 Plug 'saadparwaiz1/cmp_luasnip'
+Plug 'folke/which-key.nvim'
 
 Plug 'prettier/vim-prettier', { 'do': 'npm install --frozen-lockfile --production' }
 
@@ -65,8 +66,11 @@ if exists('+termguicolors')
     let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 endif
 
-" colorscheme spaceduck
+" colorscheme gruvbox
 autocmd vimenter * ++nested colorscheme gruvbox
+
+autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE
+
 
 lua require('lsp')
 lua require('cmp-configs')
@@ -83,6 +87,7 @@ lua require('nvim-gps-configs')
 lua require('zenmode-configs')
 lua require('illuminate-configs')
 lua require('numb-configs')
+lua require('whichkey-configs')
 
 let g:prettier#autoformat = 1
 let g:prettier#autoformat_require_pragma = 0
