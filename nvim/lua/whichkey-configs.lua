@@ -245,6 +245,12 @@ local mappings = {
 		},
 	},
 
+  w = {
+    name = "Better Windows",
+    l = {":resize -2<CR>"},
+    h = {":resize -2<CR>"},
+  },
+
 	--[[ s = {
     name = "Surround",
     ["."] = { "<cmd>lua require('surround').repeat_last()<cr>", "Repeat" },

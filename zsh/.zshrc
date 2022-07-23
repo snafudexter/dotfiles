@@ -99,6 +99,22 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 # nvim
 alias vim="nvim"
 
+# postgres
+alias pg_start="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
+alias pg_stop="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log stop"
+
+# redis
+alias redis_start="brew services start redis"
+alias redis_stop="brew services stop redis"
+alias redis_info="brew services info redis"
+
 export NVM_DIR="$HOME/.nvm"
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
     [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# bun completions
+[ -s "/Users/prabh/.bun/_bun" ] && source "/Users/prabh/.bun/_bun"
+
+# Bun
+export BUN_INSTALL="/Users/prabh/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

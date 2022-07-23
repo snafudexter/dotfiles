@@ -31,7 +31,7 @@ Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'folke/which-key.nvim'
 
 Plug 'prettier/vim-prettier', { 'do': 'npm install --frozen-lockfile --production' }
-
+Plug 'ghifarit53/tokyonight-vim'
 
 
 " fuzzy finder
@@ -56,21 +56,27 @@ Plug 'nacro90/numb.nvim'
 
 " colorschemes
 Plug 'pineapplegiant/spaceduck', { 'branch': 'main' }
-Plug 'morhetz/gruvbox'
+" Plug 'morhetz/gruvbox'
 
 
 call plug#end()
 
 if exists('+termguicolors')
-    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 endif
 
-" colorscheme gruvbox
-autocmd vimenter * ++nested colorscheme gruvbox
+colorscheme spaceduck
+" autocmd vimenter * ++nested colorscheme gruvbox
 
-autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE
+" autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE
 
+set termguicolors
+
+" let g:tokyonight_style = 'night' " available: night, storm
+" let g:tokyonight_enable_italic = 1
+
+" colorscheme tokyonight
 
 lua require('lsp')
 lua require('cmp-configs')
