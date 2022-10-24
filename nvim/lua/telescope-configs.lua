@@ -7,6 +7,10 @@ local actions = require "telescope.actions"
 telescope.load_extension "media_files"
 local icons = require("icons")
 
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', 'ff', builtin.find_files, {})
+vim.keymap.set('n', 'fg', builtin.live_grep, {})
+
 telescope.setup {
   defaults = {
 

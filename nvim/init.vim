@@ -55,10 +55,10 @@ Plug 'JoosepAlviste/nvim-ts-context-commentstring'
 Plug 'nacro90/numb.nvim'
 
 " colorschemes
-Plug 'pineapplegiant/spaceduck', { 'branch': 'main' }
-" Plug 'morhetz/gruvbox'
-
-
+" Plug 'pineapplegiant/spaceduck', { 'branch': 'main' }
+" Plug 'morhetz/gruvbox" '
+" Plug 'NLKNguyen/papercolor-theme'
+Plug 'ayu-theme/ayu-vim'
 call plug#end()
 
 if exists('+termguicolors')
@@ -66,7 +66,7 @@ if exists('+termguicolors')
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 endif
 
-colorscheme spaceduck
+" colorscheme spaceduck
 " autocmd vimenter * ++nested colorscheme gruvbox
 
 " autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE
@@ -75,8 +75,13 @@ set termguicolors
 
 " let g:tokyonight_style = 'night' " available: night, storm
 " let g:tokyonight_enable_italic = 1
-
+"
 " colorscheme tokyonight
+set t_Co=256
+let ayucolor="light"
+colorscheme ayu
+
+" set background=light
 
 lua require('lsp')
 lua require('cmp-configs')
@@ -99,7 +104,7 @@ let g:prettier#autoformat = 1
 let g:prettier#autoformat_require_pragma = 0
 
 let g:lightline = {
-      \ 'colorscheme': 'spaceduck',
+      \ 'colorscheme': 'wombat',
       \ }
 
-set bg=dark
+" set bg=dark
